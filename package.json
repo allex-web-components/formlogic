@@ -1,0 +1,24 @@
+{
+  "name": "allex_formlogicwebcomponent",
+  "version": "1.0.0",
+  "description": "AllexJS web component for FormLogic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allex-web-components/formlogic.git"
+  },
+  "keywords": [
+    "ecosystem:AllexJS",
+    "webcomponent",
+    "formlogic"
+  ],
+  "author": "Andrija Petrovic <andrija.hers@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allex-web-components/formlogic/issues"
+  },
+  "homepage": "https://github.com/allex-web-components/formlogic#readme"
+}
