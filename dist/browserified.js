@@ -4,22 +4,18 @@ function createFormLogic (execlib, applib, jqueryelementslib, formvalidationlib)
 
   var lib = execlib.lib,
     jQueryFormLogicMixin = jqueryelementslib.mixins.form.Logic,
+    InputListener = jqueryelementslib.helpers.InputListener,
     WebElement = applib.getElementType('WebElement'),
     FormValidatorMixin = formvalidationlib.mixins.FormValidator;
 
   function FormInputListener (form, input) {
+    InputListener.call(this, input);
     this.form = form;
-    this.input = input;
-    this.onchanger = this.onChange.bind(this);
-    input.on('keyup', this.onchanger);
   }
+  lib.inherit(FormInputListener, InputListener);
   FormInputListener.prototype.destroy = function () {
-    if (this.onchanger && this.input) {
-      this.input.off('keyup', this.onchanger);
-    }
-    this.onchanger = null;
-    this.input = null;
     this.form = null;
+    InputListener.prototype.destroy.call(this);
   };
   FormInputListener.prototype.onChange = function (ev) {
     this.form.processFieldChange(this.input);
